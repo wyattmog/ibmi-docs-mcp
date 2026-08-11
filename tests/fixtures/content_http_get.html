@@ -1,0 +1,623 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2026">
+
+
+
+<meta name="description" content="The HTTP_GET or HTTP_GET_BLOB scalar function retrieves a text-based resource from the specified URL through an HTTP GET request.">
+<meta name="keywords" content="function, scalar, HTTP_GET, HTTP_GET_BLOB, scalar function">
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+
+<link rel="Start" href="rbafzscale.htm">
+<title>HTTP_GET and HTTP_GET_BLOB</title>
+</head>
+<body class="pagebreak" id="rbafzscahttpget"><main role="main"><article role="article" aria-labelledby="rbafzscahttpget__title__1">
+<h1 class="topictitle1" id="rbafzscahttpget__title__1">HTTP_GET and HTTP_GET_BLOB</h1><div style="padding: .5em" class="edit-source-topic"><span class="edit-source-topic" style="font-size: 12px; vertical-align: middle"><a target="_blank" title="/rbafzscahttpget.dita" href="https://oxygen.dcs-openshift-cnv.dal.app.cirrus.ibm.com/oxygenxml-web-author/app/oxygen.html?url=gitgh%3A%2F%2Fhttps%253A%252F%252Fgithub.ibm.com%252FIBMiDocs%252Fv7r5%2Fv7r5m0f-1Q26%2Fdb2%2Frbafzscahttpget.dita">Edit online</a></span></div>
+
+
+
+
+
+<div class="body refbody"><p class="shortdesc">The HTTP_GET <span class="ph"><img alt="Start of change" src="./delta.gif">or HTTP_GET_BLOB<img alt="End of change" src="./deltaend.gif"></span> scalar function retrieves a text-based
+resource from the specified URL through an HTTP GET request.</p>
+
+<div class="section refsyn">
+<div class="syntaxdiagram"><div class="figgroup syntaxdiagram-piece"><div class="figgroup span"><span><img src="./c.gif" border="0" alt="Read syntax diagram" longdesc="rbafzscahttpget_synrbafzscahttpget__groupseq__1.htm"></span><a href="#skip"><img src="./c.gif" border="0" alt="Skip visual syntax diagram"></a><svg contentScriptType="text/ecmascript" zoomAndPan="magnify" contentStyleType="text/css" version="1.0" width="381.28655536174773px" preserveAspectRatio="xMidYMid meet" viewBox="0 0 381.28655536174773 51.20139026641846" height="51.20139026641846px" class="syntaxdiagram"><defs><style type="text/css" xml:space="preserve">
+.arrow, .syntaxarrow { fill: none; stroke: black; }
+.arrowheadStartEnd, .arrowheadRepSep, .arrowheadRepSepReturn { stroke: black; fill: black; }
+.arrowheadSeq, .arrowheadStartChoice, .arrowheadAfterChoice, .arrowheadStartRepGroup, .arrowheadEndRepGroup, .arrowheadRev { stroke: none; fill: none; }
+rect { fill: none; stroke: none; }
+rect.fragref,rect.syntaxfragref { fill: none; stroke: black; }
+text {
+fill: #000000;
+fill-opacity: 1;
+font-family: IBM Plex Sans,Arial Unicode MS,Arial,Helvetica;
+font-style: normal;
+font-weight: normal;
+font-size: 8pt;
+stroke: #000000;
+stroke-width: 0.1;
+}
+text.var, text.syntaxvar {font-style:italic;}
+</style></defs><g transform="translate(5,5)" class="diagram" xml:base="..//"><g transform="translate(10,9.10763931274414)" class="groupchoice"><g transform="translate(37.01290273666381,0)" class="boxed syntaxkwd"><g class="text" transform="translate(4,3)"><text class="syntaxkwd">HTTP_GET</text></g><rect rx="3" x="0" width="61.267605018615725" height="17.33333396911621" y="-8.572916984558105" class="syntaxkwd"></rect></g><g transform="translate(19.999999999999993,23.33333396911621)" class="boxed syntaxkwd"><g class="text" transform="translate(4,3)"><text class="syntaxkwd">HTTP_GET_BLOB</text></g><rect rx="3" x="0" width="95.29341049194336" height="17.33333396911621" y="-8.572916984558105" class="syntaxkwd"></rect></g><line y2="0" x1="0" x2="37.01290273666381" class="syntaxarrow" y1="0"></line><polygon class="arrowheadStartChoice" points="37.01290273666381,0 32.01290273666381,2.5 32.01290273666381,-2.5" transform="rotate(0,37.01290273666381,0)"></polygon><line y2="0" x1="98.28050775527953" x2="135.29341049194335" class="syntaxarrow" y1="0"></line><polygon class="arrowheadAfterChoice" points="130.29341049194335,0 125.29341049194335,2.5 125.29341049194335,-2.5" transform="rotate(0,130.29341049194335,0)"></polygon><path class="syntaxarrow" d="M0 0 Q5 0 5 5 L5 18.33333396911621 Q5 23.33333396911621 10 23.33333396911621 L19.999999999999993 23.33333396911621"></path><polygon class="arrowheadStartChoice" points="19.999999999999993,23.33333396911621 14.999999999999993,25.83333396911621 14.999999999999993,20.83333396911621" transform="rotate(0,19.999999999999993,23.33333396911621)"></polygon><path class="syntaxarrow" d="M115.29341049194335 23.33333396911621 L125.29341049194336 23.33333396911621 Q130.29341049194335 23.33333396911621 130.29341049194335 18.33333396911621 L130.29341049194335 5 Q130.29341049194335 0 135.29341049194335 0"></path><polygon class="arrowheadAfterChoice" points="130.29341049194335,5 125.29341049194335,7.5 125.29341049194335,2.5" transform="rotate(-90,130.29341049194335,5)"></polygon></g><g transform="translate(160.29341049194335,9.10763931274414)" class="boxed syntaxdelim"><g class="text" transform="translate(4,3)"><text class="syntaxdelim">(</text></g><rect rx="3" x="0" width="10.876562416553497" height="17.56944465637207" y="-9.10763931274414" class="syntaxdelim"></rect></g><g transform="translate(186.16997290849685,9.10763931274414)" class="boxed syntaxvar"><g class="text" transform="translate(4,3)"><text class="syntaxvar">url</text></g><rect rx="3" x="0" width="20.596405124664308" height="16.020833015441895" y="-8.892361164093018" class="syntaxvar"></rect></g>
+<g transform="translate(221.76637803316115,9.10763931274414)" class="groupseq"><g></g><g transform="translate(20,19.892361164093018)" class="groupseq"><g transform="translate(0,0)" class="boxed syntaxsep"><g class="text" transform="translate(4,3)"><text class="syntaxsep">,</text></g><rect rx="3" x="0" width="9.768229055404664" height="12.420138955116272" y="-4" class="syntaxsep"></rect></g><g transform="translate(24.768229055404664,0)" class="boxed syntaxvar"><g class="text" transform="translate(4,3)"><text class="syntaxvar">options</text></g><rect rx="3" x="0" width="43.87538585662842" height="18.02430534362793" y="-8.892361164093018" class="syntaxvar"></rect></g><line y2="0" x1="9.768229055404664" x2="24.768229055404664" class="syntaxarrow" y1="0"></line><polygon class="arrowheadSeq" points="24.768229055404664,0 19.768229055404664,2.5 19.768229055404664,-2.5" transform="rotate(0,24.768229055404664,0)"></polygon></g><line y2="0" x1="0" x2="54.32180745601654" class="syntaxarrow" y1="0"></line><line y2="0" x1="54.32180745601654" x2="108.64361491203309" class="syntaxarrow" y1="0"></line><polygon class="arrowheadAfterChoice" points="103.64361491203309,0 98.64361491203309,2.5 98.64361491203309,-2.5" transform="rotate(0,103.64361491203309,0)"></polygon><path class="syntaxarrow" d="M0 0 Q5 0 5 5 L5 14.892361164093018 Q5 19.892361164093018 10 19.892361164093018 L20 19.892361164093018"></path><polygon class="arrowheadStartChoice" points="20,19.892361164093018 15,22.392361164093018 15,17.392361164093018" transform="rotate(0,20,19.892361164093018)"></polygon><path class="syntaxarrow" d="M88.64361491203309 19.892361164093018 L98.64361491203309 19.892361164093018 Q103.64361491203309 19.892361164093018 103.64361491203309 14.892361164093018 L103.64361491203309 5 Q103.64361491203309 0 108.64361491203309 0"></path><polygon class="arrowheadAfterChoice" points="103.64361491203309,5 98.64361491203309,7.5 98.64361491203309,2.5" transform="rotate(-90,103.64361491203309,5)"></polygon></g><g transform="translate(345.40999294519423,9.10763931274414)" class="boxed syntaxdelim"><g class="text" transform="translate(4,3)"><text class="syntaxdelim">)</text></g><rect rx="3" x="0" width="10.876562416553497" height="17.56944465637207" y="-9.10763931274414" class="syntaxdelim"></rect></g><polygon class="arrowheadStartEnd" points="0,9.10763931274414 -5,11.60763931274414 -5,6.607639312744141" transform="rotate(0,0,9.10763931274414)"></polygon><polygon class="arrowheadStartEnd" points="5,9.10763931274414 0,11.60763931274414 0,6.607639312744141" transform="rotate(0,5,9.10763931274414)"></polygon><line y2="9.10763931274414" x1="0" x2="10" class="syntaxarrow" y1="9.10763931274414"></line><line y2="9.10763931274414" x1="145.29341049194335" x2="160.29341049194335" class="syntaxarrow" y1="9.10763931274414"></line><polygon class="arrowheadSeq" points="160.29341049194335,9.10763931274414 155.29341049194335,11.60763931274414 155.29341049194335,6.607639312744141" transform="rotate(0,160.29341049194335,9.10763931274414)"></polygon><line y2="9.10763931274414" x1="171.16997290849685" x2="186.16997290849685" class="syntaxarrow" y1="9.10763931274414"></line><polygon class="arrowheadSeq" points="186.16997290849685,9.10763931274414 181.16997290849685,11.60763931274414 181.16997290849685,6.607639312744141" transform="rotate(0,186.16997290849685,9.10763931274414)"></polygon><line y2="9.10763931274414" x1="206.76637803316115" x2="221.76637803316115" class="syntaxarrow" y1="9.10763931274414"></line><polygon class="arrowheadSeq" points="221.76637803316115,9.10763931274414 216.76637803316115,11.60763931274414 216.76637803316115,6.607639312744141" transform="rotate(0,221.76637803316115,9.10763931274414)"></polygon><line y2="9.10763931274414" x1="330.40999294519423" x2="345.40999294519423" class="syntaxarrow" y1="9.10763931274414"></line><polygon class="arrowheadSeq" points="345.40999294519423,9.10763931274414 340.40999294519423,11.60763931274414 340.40999294519423,6.607639312744141" transform="rotate(0,345.40999294519423,9.10763931274414)"></polygon><line y2="9.10763931274414" x1="356.28655536174773" x2="366.28655536174773" class="syntaxarrow" y1="9.10763931274414"></line><polygon class="arrowheadStartEnd" points="366.28655536174773,9.10763931274414 361.28655536174773,11.60763931274414 361.28655536174773,6.607639312744141" transform="rotate(0,366.28655536174773,9.10763931274414)"></polygon><polygon class="arrowheadStartEnd" points="366.28655536174773,9.10763931274414 361.28655536174773,11.60763931274414 361.28655536174773,6.607639312744141" transform="rotate(180,366.28655536174773,9.10763931274414)"></polygon></g></svg><a id="skiprbafzscahttpget__object__1"></a></div></div></div>
+
+</div>
+
+<div class="section">
+<dl class="parml">
+
+<dt class="pt dlterm"><span class="ph synph"><span class="ph var">url</span></span></dt>
+
+<dd class="pd">An expression that returns a built-in character string or graphic string data type that
+specifies the URL of the resource being accessed.</dd>
+
+<dd class="pd ddexpand">The only supported protocols in the URL are <em>http://</em> and <em>https://</em>. HTTP basic
+authentication in the form https://userid:password@ cannot be specified in the URL. Instead, the
+basicAuth option must be used to specify the userid and password for basic authentication. </dd>
+
+
+
+<dt class="pt dlterm"><span class="ph synph"><span class="ph var">options</span></span></dt>
+
+<dd class="pd">An expression that returns a built-in character string or graphic string data type. This string
+must be formatted as a JSON object containing the options, including headers, for the request. See
+<a href="#rbafzscahttpget__HTTP_options">HTTP options</a> for the list of options.</dd>
+
+<dd class="pd ddexpand">If no options are provided, the default options are used.</dd>
+
+
+</dl>
+
+<p>The result of the HTTP_GET function is CLOB(2G) CCSID 1208 containing the response message. <span class="ph"><img alt="Start of change" src="./delta.gif">The result of the HTTP_GET_BLOB function is BLOB(2G) containing the response
+message.<img alt="End of change" src="./deltaend.gif"></span></p>
+
+</div>
+
+<section class="section" role="region" aria-labelledby="rbafzscahttpget__title__2"><h2 class="sectiontitle" id="rbafzscahttpget__title__2">Notes</h2>
+
+<p>For more information about using the HTTP functions see <a href="../sqlp/rbafyhttpoverview.htm">HTTP functions overview</a>.</p>
+
+<p>To return the header information from the HTTP request, use the HTTP_GET_VERBOSE <span class="ph"><img alt="Start of change" src="./delta.gif">or HTTP_GET_BLOB_VERBOSE<img alt="End of change" src="./deltaend.gif"></span> table function: <a href="rbafzscahttpgetverbose.htm" title="The HTTP_GET_VERBOSE or HTTP_GET_BLOB_VERBOSE table function retrieves a text-based resource from the specified URL through an HTTP GET request. It returns a one row table that contains the normal HTTP response for the request and the header information returned from the HTTP request">HTTP_GET_VERBOSE and HTTP_GET_BLOB_VERBOSE</a></p>
+
+</section>
+
+<div class="example"><h2 class="sectiontitle" id="rbafzscahttpget__title__3">Example</h2>
+
+<ul>
+<li>Retrieve service information from the IBM® PSP website
+using a certificate store created from a Java™ certificate
+store. See <a href="../sqlp/rbafyhttpoverview.htm#rbafyhttpoverview__HTTP_SSL">SSL considerations</a> for more information.<pre class="codeblock"><code>VALUES QSYS2.HTTP_GET(
+             'https://www.ibm.com/support/pages/sites/default/files/inline-files/xmldoc.xml',
+             '{"sslCertificateStoreFile":"/home/javaTrustStore/fromJava.KDB"}');
+</code></pre></li>
+
+</ul>
+
+</div>
+
+<section class="section" role="region" aria-labelledby="rbafzscahttpget__HTTP_options__title__1" id="rbafzscahttpget__HTTP_options"><h2 class="sectiontitle" id="rbafzscahttpget__HTTP_options__title__1">HTTP options</h2>
+
+<div class="p">Each HTTP function has a parameter for passing options to be used on the request. These options
+include the setting of the HTTP headers. This string must be a JSON object in the following
+format:<pre class="codeblock"><code>{"option1":"option-setting1","option2":"option-setting2"}</code></pre></div>
+
+<div class="p">For example, using the option
+string<img alt="Start of change" src="./delta.gif"><pre class="codeblock"><code>{"headers":{"User-Agent":"IBM i HTTP function"}}</code></pre><img alt="End of change" src="./deltaend.gif"> will cause
+<pre class="codeblock"><code>"User-Agent": "IBM i HTTP function"</code></pre> to be included in the HTTP header sent to
+the server. </div>
+
+<p>The following options can be set in the JSON object: </p>
+
+
+<div class="tablenoborder"><table summary="" id="rbafzscahttpget__table_hsf_d4l_cqb" style="width: 100%"><caption><span class="tablecap">Table 1. HTTP options </span></caption><colgroup><col style="width:20.75471698113208%"><col style="width:18.867924528301888%"><col style="width:22.641509433962266%"><col style="width:37.735849056603776%"></colgroup><thead style="text-align:left;">
+<tr>
+<th id="rbafzscahttpget__table_hsf_d4l_cqb__entry__1" class="ncol thleft thbot">Option</th>
+
+<th id="rbafzscahttpget__table_hsf_d4l_cqb__entry__2" class="ncol thleft thbot">Possible settings</th>
+
+<th id="rbafzscahttpget__table_hsf_d4l_cqb__entry__3" class="ncol thleft thbot">Default setting</th>
+
+<th id="rbafzscahttpget__table_hsf_d4l_cqb__entry__4" class="ncol thleft thbot">Description</th>
+
+</tr>
+
+</thead>
+<tbody>
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft">basicAuth</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft"><em>userid,password</em></td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft">&nbsp;</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft">Sets the userid and password that will be used for HTTP basic
+authentication. <p>To prevent exposure of the userid and password, this option is only allowed when
+the URL begins with <em>https:</em>.</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft">connectTimeout</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft">0-2000000</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft">No timeout will occur.</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft">Sets the connect timeout value. If timeout is greater than zero,
+the value will be used as the maximum time, in seconds, to wait for a connection to
+complete.</td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft">header</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft"><em>headername,headervalue</em></td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft">&nbsp;</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft">Sets an HTTP header in the HTTP request with the specified
+<em>headername</em> and <em>headervalue</em>. <p>This option can be specified multiple times to set
+multiple headers. </p>
+<p>It is recommended that the <em>headers</em> option be used instead of the
+<em>header</em> option.</p>
+
+</td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft"><img alt="Start of change" src="./delta.gif">headers<img alt="End of change" src="./deltaend.gif"></td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft"><img alt="Start of change" src="./delta.gif">{"<em>header1</em>":"<em>value1</em>",
+"<em>header2</em>":"<em>value2</em>", "<em>header3</em>":"<em>value3</em>" }<img alt="End of change" src="./deltaend.gif"></td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft"><img alt="Start of change" src="./delta.gif">&nbsp;<img alt="End of change" src="./deltaend.gif"></td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft"><img alt="Start of change" src="./delta.gif">Sets one or many HTTP headers in the HTTP request. The setting
+consists of a JSON object with key value pairs representing a header name and corresponding header
+value. <p>A common header that may be required is the Accept header. This header can be set in the
+following way: <code class="ph codeph">{"headers":{"Accept":"*"}}</code></p>
+<p>By default, only the Host and
+User-Agent HTTP header are set for all requests. The Host is set using the host information in the
+URL. The User-Agent header defaults to <code class="ph codeph">curl/XX.YY</code> where XX.YY are some
+version numbers. This value was chosen to provide anonymity when accessing web services.</p>
+<p> If
+the content-type HTTP header is not set for a POST or PUT operation, the default content type that
+will be used is:</p>
+<p><code class="ph codeph">Content-Type: text/xml; charset=UTF-8</code></p>
+<p>To
+correctly use these headers, consult the appropriate Web server and RFC documentation on the use of
+HTTP request headers. Examples of RFCs are <a href="https://www.ibm.com/links?url=https%3A%2F%2Ftools.ietf.org%2Fhtml%2Frfc2616" rel="noopener" target="_blank" title="(Opens in a new tab or window)">RFC2616</a> and <a href="https://www.ibm.com/links?url=https%3A%2F%2Ftools.ietf.org%2Fhtml%2Frfc7231" rel="noopener" target="_blank" title="(Opens in a new tab or window)">RFC7231</a>.</p>
+<img alt="End of change" src="./deltaend.gif"></td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft">ioTimeout</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft">0-2000000</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft">No timeout will occur.</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft">Sets how long to wait for a read request to complete. If timeout is
+greater than zero, the value will be used as the maximum time, in seconds, to wait for a read
+request to complete.</td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft">proxy</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft"><em>host,port</em></td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft">&nbsp;</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft">Sets the HTTP proxy information.</td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft">proxyAuth</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft"><em>userid,password</em></td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft">&nbsp;</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft">Sets the HTTP proxy authentication information.<p> To prevent
+exposure of the userid and password, this option is only allowed when the
+<code class="ph codeph">proxySsl</code> option is true.</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft">proxySsl</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft">
+<div class="lines">true<br>
+false<br>
+</div>
+
+</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft">true</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft">Sets whether a secure (SSL) connection should be used when
+connecting to the proxy server. A value of true indicates that the transport will connect to the
+proxy server using a secure channel. A value of false indicates that the transport will connect to
+the proxy server using an unsecure channel.</td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft">redirect</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft">0-2000000</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft">0</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft">Specifies the number of HTTP redirects that will be followed. If
+the number is greater than zero, HTTP redirects will be followed up to the number specified. If the
+value is less than one, HTTP redirects will not be followed.</td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft">signalErrors</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft">
+<div class="lines">true<br>
+false<br>
+</div>
+
+</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft">false</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft">Indicates whether an HTTP error should be signaled as an
+SQLException.  This will be seen as SQLSTATE 38501, SQLCODE -443.</td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft">sslCertificateStoreFile</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft"><em>file</em></td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft">
+<div class="lines">/QIBM/USERDATA/ICSS/<br>
+CERT/SERVER/DEFAULT.KDB</div>
+
+</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft">Specifies the name of the certificate store file to be used for the
+secure session or SSL environment. This parameter is ignored if the
+<code class="ph codeph">sslApplicationID</code> option is set to a value. <p>If SSL communication is to be
+done by using a path to a keystore file, the user profile the application is running under must have
+authority to the file.</p>
+<ul>
+<li>Execute (*X) data authority to each directory preceding the stream file being read and </li>
+
+<li>Read (*R) data authority to the stream file</li>
+
+</ul>
+<p>This option is only used when the URL begins with <em>https:</em>.</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft">sslCertificateStorePassword</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft"><em>password</em></td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft">&nbsp;</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft">Specifies the password for the certificate store file to be used
+for the secure session or SSL environment. If the option is not passed or is set to the null string,
+the internal stash file associated with the user profile that is being used to run the application
+is used as long as the user has authority to the certificate store file and the password has been
+used one time on the system. This option is ignored if the <code class="ph codeph">sslApplicationID</code>
+option is set to a value.<p>This option is only used when the URL begins with
+<em>https:</em>.</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft">sslCertificateLabel</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft"><em>label</em></td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft">&nbsp;</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft">Specifies the label associated with the certificate in the
+certificate store to be used for the secure session or SSL environment. If the option is not passed
+or is set to the null string, the default certificate label in the specified certificate store file
+is used for the SSL environment. This option is ignored if the
+<code class="ph codeph">sslApplicationID</code> option is set to a value.<p>This option is only used when
+the URL begins with <em>https:</em>.</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft">sslTLS11</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft">
+<div class="lines">ENABLE<br>
+NONE<br>
+</div>
+
+</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft">NONE</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft">Enable or disable the TLS Version 1.1 ciphers. A value of NONE will
+disable the ciphers; any other value will enable the ciphers. <p>This option is only used when the
+URL begins with <em>https:</em>.</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft">sslTLS12</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft">
+<div class="lines">ENABLE<br>
+NONE<br>
+</div>
+
+</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft">ENABLE</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft">Enable or disable the TLS Version 1.2 ciphers. A value of NONE will
+disable the ciphers; any other value will enable the ciphers. <p>This option is only used when the
+URL begins with <em>https:</em>.</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft">sslTLS13</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft">
+<div class="lines">ENABLE<br>
+NONE<br>
+</div>
+
+</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft">ENABLE</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft">Enable or disable the TLS Version 1.3 ciphers. A value of NONE will
+disable the ciphers; any other value will enable the ciphers. <p>This option is only used when the
+URL begins with <em>https:</em>.</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft">sslTolerate</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft">
+<div class="lines">true<br>
+false<br>
+</div>
+
+</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft">false</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft">Tolerate soft validation errors (expired certificate or certificate
+not in certificate store). Specify a value of true to tolerate soft validation errors, or false to
+not tolerate soft validation errors.<p>Warning: Enabling this option allows man-in-the-middle
+attacks to occur and is not recommended.</p>
+
+<p>This option is only used when the URL begins with <em>https:</em>.</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft">sslApplicationId</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft"><em>id</em></td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft">&nbsp;</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft">Application ID to use for the SSL environment.<p>This option is
+only used when the URL begins with <em>https:</em>.</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft">sslDomainName</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft"><em>name</em></td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft">Set using hostname present in https: URL</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft">Fully qualified domain name that will be used as Server Name
+Indication (SNI) as defined by RFC 6066.<p>This option is only used when the URL begins with
+<em>https:</em>.</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft">sslSniCritical</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft">
+<div class="lines">true<br>
+false<br>
+</div>
+
+</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft">false</td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft">A value of true indicates that the SNI request is critical and thus
+the server must support the SNI extension. Otherwise, the secure connection will fail if server does
+not send the extension. A value of false indicates that the server does not need to support the SNI
+extension.<p>This option is only used when the URL begins with <em>https:</em>.</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__1 " class="ncol tdleft"><img alt="Start of change" src="./delta.gif">verboseResponseHeaderFormat <img alt="End of change" src="./deltaend.gif"></td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__2 " class="ncol tdleft"><img alt="Start of change" src="./delta.gif">
+<div class="lines">json <br>
+<span class="ph"><img alt="Start of change" src="./delta.gif">jsonCookiesArray<br>
+jsonCookiesObject<img alt="End of change" src="./deltaend.gif"></span><br>
+jsonString <br>
+raw </div>
+
+<img alt="End of change" src="./deltaend.gif"></td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__3 " class="ncol tdleft"><img alt="Start of change" src="./delta.gif">json<img alt="End of change" src="./deltaend.gif"></td>
+
+<td headers="rbafzscahttpget__table_hsf_d4l_cqb__entry__4 " class="ncol tdleft"><img alt="Start of change" src="./delta.gif">Specifies the formatting used by the RESPONSE_HTTP_HEADER column of
+the HTTP_<em>xxx</em>_VERBOSE functions. <dl>
+
+<dt class="dlterm">json</dt>
+
+<dd class="dlentry">If the header value is a valid JSON value, it is used directly as the JSON value. If it is not a
+valid JSON value, it is converted to a JSON string. With this setting, any JSON object returned as a
+JSON header can be accessed as a JSON value within the constructed RESPONSE_HTTP_HEADER JSON object.
+Similarly, JSON numbers and special values can be accessed as numbers and special values. The
+disadvantage is that the outer quotes surrounding a header value are not preserved, as this is
+interpreted as a JSON string. </dd>
+
+<dd class="ddexpand">Cookies will be returned with the <em>Set-Cookie</em> key. For example, a response containing
+cookies named <em>cookie1</em> and <em>cookie2</em> would look like the following within the JSON
+object: <pre class="codeblock"><code>"Set-Cookie":"cookie1=cookie1value", 
+"Set-Cookie":"cookie2=cookie2value" </code></pre></dd>
+
+
+
+<dt class="dlterm"><img alt="Start of change" src="./delta.gif">jsonCookiesArray<img alt="End of change" src="./deltaend.gif"></dt>
+
+<dd class="dlentry"><img alt="Start of change" src="./delta.gif">The format is like the <code class="ph codeph">json</code> option, but the cookies are returned as objects
+within a JSON array. For example, the response containing cookies named <em>cookie1</em> and
+<em>cookie2</em> would look like the following:<pre class="codeblock"><code>"Set-Cookies": [{"cookie":"cookie1", 
+                 "value":"cookie1value"},
+                {"cookie":"cookie2", 
+                 "value":"cookie2value"}] </code></pre>
+<img alt="End of change" src="./deltaend.gif"></dd>
+
+
+
+<dt class="dlterm"><img alt="Start of change" src="./delta.gif">jsonCookiesObject<img alt="End of change" src="./deltaend.gif"></dt>
+
+<dd class="dlentry"><img alt="Start of change" src="./delta.gif">The header values are formatted like the <code class="ph codeph">json</code> option, but cookies are returned
+within a JSON object with a <em>Set-Cookies</em> key. The object has the cookie as the JSON key and
+the value of the cookie as the JSON value. For example, a response containing cookies named
+<em>cookie1</em> and <em>cookie2</em> would look like the following:
+<pre class="codeblock"><code>"Set-Cookies": {"cookie1":"cookie1value", 
+                "cookie2":"cookie2value"}</code></pre><img alt="End of change" src="./deltaend.gif"></dd>
+
+
+
+<dt class="dlterm">jsonString</dt>
+
+<dd class="dlentry">The header value is always converted to a JSON string. If the header value contains quotes, they
+will be escaped within the JSON string. </dd>
+
+
+
+<dt class="dlterm">raw</dt>
+
+<dd class="dlentry">The unformatted response message and headers are returned.</dd>
+
+
+</dl>
+<img alt="End of change" src="./deltaend.gif"></td>
+
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<div class="p">Some of the options can expose sensitive information such as passwords. A number of best
+practices can be use to prevent the sensitive information from being exposed in the SQL statement
+text, which may be visible using DBMON. Here are some examples of best practices to protect the
+password. <ol>
+<li>Use a global variable and concatenate the global values when the SQL Statement is executed.
+<pre class="codeblock"><code>CREATE VARIABLE MYLIB.HTTP_PW VARCHAR(30); 
+SET MYLIB.HTTP_PW = 'http_pwd';
+VALUES QSYS2.HTTP_GET( 'https://www.somesite.com/authorized_info.html', '{"basicAuth":"userid,' CONCAT MYLIB.HTTP_PW CONCAT '"}' );
+</code></pre></li>
+
+<li> For interfaces that support a parameter marker, set the password using a parameter marker. Here
+is an QSHELL example using the JDBC client provided in
+jt400.jar.<pre class="codeblock"><code>java -jar /qibm/proddata/os400/jt400/lib/java6/jt400.jar jdbc:db2:localhost
+!PREPARE select QSYS2.HTTP_GET( 'https://www.somesite.com/authorized_info.html', 
+                                '{"basicAuth":"userid,' CONCAT ? CONCAT '"}' ) from sysibm.sysdummy1
+!setParm 1,http_pwd
+!executeQuery
+</code></pre></li>
+
+<li>Store passwords in a table, protected with a column
+mask.<pre class="codeblock"><code>CREATE MYLIB.TABLE PASSWORDS (TYPE VARCHAR(20), PWD_VALUE VARCHAR(100) CCSID 37);
+
+CREATE MASK MYLIB.PASSWORD_MASK ON MYLIB.PASSWORDS
+FOR COLUMN PWD_VALUE RETURN
+CASE WHEN (VERIFY_GROUP_FOR_USER(SESSION_USER,'&lt;my user id&gt;') = 1)
+THEN PWD_VALUE
+ELSE 'Sorry' END
+ENABLE;
+
+ALTER TABLE MYLIB.PASSWORDS
+ACTIVATE COLUMN ACCESS CONTROL;
+
+INSERT INTO MYLIB.PASSWORDS VALUES ('HTTP', 'My secure password');
+
+VALUES QSYS2.HTTP_GET( 'https://www.somesite.com/authorized_info.html', 
+                       '{"basicAuth":"userid,' CONCAT 
+                       (SELECT PWD_VALUE FROM MYLIB.PASSWORDS WHERE TYPE = 'HTTP') CONCAT 
+                       '"}' );
+</code></pre></li>
+
+</ol>
+</div>
+
+</section>
+
+</div>
+
+
+<aside role="complementary" aria-labelledby="rbafzscahttpget__title__1"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a data-hd-product="ssw_ibm_i_75" href="rbafzscale.htm" title="A scalar function takes input argument(s) and returns a single value result. A scalar function can be used wherever an expression can be used.">Scalar functions</a></div>
+</div>
+</nav></aside></article></main><script type="text/javascript"  src="/DiSJ96/TRQSoT/X3-35kC/fAmd9wME/puiDGVthGb8SkG9bEc/KnZ7Vkk/FBJ/meWcLBx8B"></script></body></html>
